@@ -20,9 +20,21 @@ class MainActivity : AppCompatActivity() {
         val resetButton: Button = findViewById(R.id.reset_button)
         rollButton.setOnClickListener { rollDice() }
         resetButton.setOnClickListener{reset()}
+        addButton.setOnClickListener{addDice()}
     }
     private fun addDice(){
+        val num1: TextView=findViewById(R.id.num1)
+        val one=num1.text.toString().toInt()+1
 
+        val drawableResource1 = when (one) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
+        }
+        image1.setImageResource(drawableResource1)
     }
     private fun reset(){
 
