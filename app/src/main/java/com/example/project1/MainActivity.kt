@@ -16,13 +16,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val rollButton: Button = findViewById(R.id.roll_button)
+        val addButton: Button = findViewById(R.id.add_button)
+        val resetButton: Button = findViewById(R.id.reset_button)
         rollButton.setOnClickListener { rollDice() }
+        resetButton.setOnClickListener{reset()}
     }
+    private fun addDice(){
 
+    }
+    private fun reset(){
+
+        image1.setImageResource(R.drawable.empty_dice)
+        image2.setImageResource(R.drawable.empty_dice)
+        image3.setImageResource(R.drawable.empty_dice)
+    }
     private fun rollDice() {
         val randomInt1 = Random().nextInt(6) + 1
         val randomInt2 = Random().nextInt(6) + 1
         val randomInt3 = Random().nextInt(6) + 1
+        val num1: TextView=findViewById(R.id.num1)
+        //Set text for random number
+        num1.text=randomInt1.toString()
+
+        //Pop up msg
         Toast.makeText(
             this, "Dice Rolled",
             Toast.LENGTH_SHORT
@@ -67,5 +83,8 @@ class MainActivity : AppCompatActivity() {
         image1.setImageResource(drawableResource1)
         image2.setImageResource(drawableResource2)
         image3.setImageResource(drawableResource3)
+
+
     }
+
 }

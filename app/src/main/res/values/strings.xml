@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Project1</string>
     <string name="hello">Dice Roller</string>
-
+    <string name="add_label">Count Up</string>
+    <string name="reset_label">Reset</string>
     <string name="roll_label">Roll</string>
 </resources>
